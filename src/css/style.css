@@ -65,6 +65,17 @@ header {
 
 .white-outline-button:hover {
   background-color: white;
+  color: black;
+}
+
+.black-outline-button {
+  border-color: black;
+  color: black;
+}
+
+.black-outline-button:hover {
+  background-color: black;
+  color: white;
 }
 
 .left-side {
@@ -189,4 +200,55 @@ nav a {
 
 .over a:hover {
   color: var(--DarkBlue);
+}
+
+.importantDates {
+  display: flex;
+}
+
+.importantDate {
+  width: 33.33vw;
+  text-align: center;
+}
+
+.importantDate h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 5rem;
+}
+
+.importantDate p {
+  font-size: 1.4rem;
+  width: 70%;
+  margin: 2rem auto;
+}
+
+.importantDate .divider {
+  width: .1rem;
+  display: inline-block;
+  height: 1.8rem;
+  background: black;
+  margin: 0 2rem;
+}
+
+.importantDate a {
+  display: block;
+  width: 20rem;
+  margin: 2rem auto 5rem;
+}
+
+.whiteText {
+  color: white;
+}
+
+.whiteText .divider {
+  background: white;
+}
+
+.autovrije {
+  background: var(--Green);
+}
+
+.strap {
+  background: var(--Blue);
 }

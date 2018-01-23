@@ -27,4 +27,28 @@ Vlaanderen #goedopweg om mee(r) te autominderen. Tal van acties tijdens de Week 
       <a href="#" class="button white-outline-button wide-button">lees meer</a>
     </div>
   </section>
+
+  <section class="importantDates">
+    <h2 class="hidden">important dates</h2>
+    <article class="importantDate whiteText autovrije">
+      <h3>16 SEPT <span class="divider"></span> Autovrije zondag</h3>
+      <p>We starten de week goed met autovrije zondag. Het centrum van verschillende steden wordt afgezet en in plaats van files vullen toffe activiteiten de straten.</p>
+      <a href="#" class="button white-outline-button wide-button">Lees meer</a>
+    </article>
+
+    <article class="importantDate">
+      <h3>20 SEPT <span class="divider"></span> Car Free Day</h3>
+      <p>Een kleine  uitdaging op donderdag. Laat de wagen thuis en probeer eens een andere mogelijkheid om op het werk te raken!</p>
+      <a href="#" class="button black-outline-button wide-button">Lees meer</a>
+    </article>
+
+    <article class="importantDate whiteText strap">
+      <h3>21 SEPT <span class="divider"></span> STRAPdag</h3>
+      <p>Om de schoolweek af te sluiten worden kinderen
+van meer dan 1.200 meewerkende scholen
+aangemoedigd om naar school te stappen of trappen</p>
+      <a href="#" class="button white-outline-button wide-button">Lees meer</a>
+    </article>
+  </section>
+
 </main>
