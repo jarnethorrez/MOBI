@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: medium;
+  src: url(Futura-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: bold;
+  src: url(Futura-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: lighter;
+  src: url(Futura-Light.woff) format('woff');
+}

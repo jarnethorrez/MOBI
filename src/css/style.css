@@ -3,8 +3,14 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  font-family: Futura;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+h1 {
+  font-family: Futura;
+  font-size: 5rem;
 }
