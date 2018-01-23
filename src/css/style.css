@@ -7,8 +7,21 @@ html {
   font-family: Futura;
 }
 
-*, *:before, *:after {
+*, *:before, *:after { /* stylelint-disable-line */
   box-sizing: inherit;
+}
+
+.wrapper-shower {
+  position: absolute;
+  top: 0;
+  height: 400px;
+  width: 960px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: black;
+  opacity: .5;
+  z-index: 9999999;
 }
 
 .hidden {
@@ -17,6 +30,25 @@ html {
 
 header {
   display: flex;
+}
+
+.button {
+  padding: 1rem 2rem;
+  border-radius: 50rem;
+  border: .1rem solid black;
+
+  transition: all 500ms ease;
+}
+
+.green-button {
+  background: var(--Green);
+  color: white;
+  border-color: var(--Green);
+}
+
+.green-button:hover {
+  background-color: white;
+  color: var(--Green);
 }
 
 .left-side {
@@ -43,10 +75,48 @@ header {
   grid-column: 1;
   display: block;
   margin-right: -.25rem;
+  opacity: .8;
 }
 
 .right-side {
-  background-image: url(../assets/img/dot-pattern.png);
+  background-image: url(../assets/img/dot-pattern-light.png);
   background-repeat: repeat;
   width: 50vw;
+  display: grid;
+  grid-template-columns: 48rem;
+  grid-template-rows: 5rem 5rem 17rem 2rem 48rem;
+}
+
+nav {
+  /* margin-top: 5rem;
+  margin-left: 9.3rem; */
+  grid-row: 2 / span 1;
+  grid-column: 1;
+  justify-self: end;
+}
+
+nav a {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1rem;
+}
+
+.tagline {
+  font-size: 4.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 38rem;
+  text-align: right;
+  grid-row: 5 / span 1;
+  grid-column: 1;
+  z-index: 9;
+  justify-self: end;
+}
+
+.right-side img {
+  grid-row: 4 / span 2;
+  grid-column: 1;
 }
