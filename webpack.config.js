@@ -1,25 +1,18 @@
-const path = require(`path`);
-const webpack = require(`webpack`);
+const path = require(`path`),
+  merge = require(`webpack-merge`),
+  parts = require(`./webpack.parts`),
+  webpack = require(`webpack`);
 
 const PATHS = {
-  src: path.join(__dirname, `src`),
-  dist: path.join(__dirname, `dist`),
+  src : path.join(__dirname, `src`),
+  dist: path.join(__dirname, `dist`)
 };
-const merge = require(`webpack-merge`);
-const parts = require(`./webpack.parts.js`);
 
-const commonConfig = merge([ {
+const commonConfig = {
   entry: [
-    path.join(PATHS.src, `css/style.css`),
     path.join(PATHS.src, `js/script.js`),
+    path.join(PATHS.src, `css/style.css`),
   ],
-  devtool: `sourcemap`,
-  devServer: {
-    contentBase: `./src`,
-    historyApiFallback: true,
-    hot: true,
-    port: 8080,
-  },
   output: {
     path: PATHS.dist,
     filename: `js/script.js`,
@@ -29,52 +22,45 @@ const commonConfig = merge([ {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: [{
-          loader: `babel-loader`
-        },
-        {
-          loader: `eslint-loader`,
-          options: {
-            fix: true,
-          }
-        }
-        ]
-      },{
-        test: /\.html$/,
-        loader: `html-loader`
-      },{
-        test: /\.jpe?g$/,
+        loader: `babel-loader`
+      },
+      {
+        test: /\.(jpe?g|png|svg|woff|woff2|webp|gif)$/,
         loader: `url-loader`,
-        options:{
-          limit:1000,
-          context:`./src`,
-          name:`[path][name].[ext]`,
-        },
+        options: {
+          limit: 1000,
+          context: `./src`,
+          name: `[path][name].[ext]`
+        }
       }
     ]
   },
-  plugins:[
-    new webpack.HotModuleReplacementPlugin(),
+  plugins: [
     new webpack.ProvidePlugin({
       'Promise': 'es6-promise',
       'fetch': 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
     })
   ]
-}]);
+};
 
 const productionConfig = merge([
-  parts.extractCSS(),
+  parts.extractCSS()
 ]);
+
 const developmentConfig = merge([
   {
-    devServer: { overlay: true }
+    devServer: {
+      overlay: true,
+      contentBase: PATHS.src
+    }
   },
   parts.loadCSS(),
 ]);
 
-if(process.env.NODE_ENV === `production`){
-  console.log(`Building production`);
-  module.exports = merge(commonConfig, productionConfig);
-}else{
-  module.exports = merge(commonConfig, developmentConfig);
-}
+module.exports = () => {
+  if (process.env.NODE_ENV === "production") {
+    console.log("building production");
+    return merge(commonConfig, productionConfig);
+  }
+  return merge(commonConfig, developmentConfig);
+};

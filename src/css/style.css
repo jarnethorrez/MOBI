@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import 'vars.css';
 
 html {
   box-sizing: border-box;
@@ -10,7 +11,42 @@ html {
   box-sizing: inherit;
 }
 
-h1 {
-  font-family: Futura;
-  font-size: 5rem;
+.hidden {
+  display: none;
+}
+
+header {
+  display: flex;
+}
+
+.left-side {
+  background-color: var(--Green);
+  width: 50vw;
+  display: grid;
+  grid-template-rows: 5rem 24rem 5rem 35rem;
+  grid-template-columns: 1fr;
+}
+
+.left-side img {
+  justify-self: end;
+}
+
+.left-side .logo {
+  grid-row: 2 / span 2;
+  grid-column: 1;
+  z-index: 9;
+  margin-right: 6vw;
+}
+
+.left-side .car {
+  grid-row: 3 / span 2;
+  grid-column: 1;
+  display: block;
+  margin-right: -.25rem;
+}
+
+.right-side {
+  background-image: url(../assets/img/dot-pattern.png);
+  background-repeat: repeat;
+  width: 50vw;
 }
