@@ -13,7 +13,12 @@ class DetailController extends Controller {
   }
 
   public function index() {
-
+    if(!empty($_GET['e'])) {
+        $event = $this->eventDAO->selectById($_GET['e']);
+        $this->set('event', $event);
+    } else {
+      Header('Location: index.php');
+    }
   }
 }
 ?>

@@ -148,7 +148,7 @@ header {
   font-size: 4.3rem;
   text-transform: uppercase;
   font-weight: 700;
-  width: 38rem;
+  width: 48rem;
   text-align: right;
   grid-row: 5 / span 1;
   grid-column: 1;
@@ -499,4 +499,95 @@ footer .social {
   width: 20rem;
   text-align: center;
   margin-top: 2rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 40rem;
+  grid-template-rows: 5rem 35rem 1fr;
+  margin-top: -5rem;
+}
+
+.thumbnail {
+  width: 40rem;
+  height: 40rem;
+  background-size: cover;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.detail-grid .intro {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  font-size: 1.4rem;
+  font-weight: 500;
+  align-self: end;
+}
+
+.detail-grid .intro p {
+  margin-bottom: 2rem;
+  width: 90%;
+  line-height: 1.8rem;
+}
+
+.detail-grid .detail-blocks {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 30rem);
+  grid-gap: 2rem;
+}
+
+.detail-grid .detail-blocks h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--Blue);
+  text-transform: uppercase;
+}
+
+.detail-grid .detail-blocks p {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  margin-top: 1rem;
+}
+
+.detail-grid .praktisch {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+  background: var(--Blue);
+  color: white;
+  padding: 5rem 15rem;
+  font-size: 1.4rem;
+  margin: 10rem 0;
+}
+
+.detail-grid .praktisch h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.detail-grid .praktisch p {
+  margin: 1rem 0;
+  line-height: 1.6rem;
+}
+
+.detail-grid .praktisch ul {
+  list-style: initial;
+}
+
+.detail-grid .praktisch li {
+  margin-left: 2rem;
+}
+
+.detail-grid .buttons {
+  grid-row: 5;
+  grid-column: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 10rem;
 }
