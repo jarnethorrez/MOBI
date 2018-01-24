@@ -569,7 +569,7 @@ footer .social {
   color: white;
   padding: 5rem 15rem;
   font-size: 1.4rem;
-  margin: 10rem 0;
+  margin-top: 10rem;
 }
 
 .detail-grid .praktisch h3 {
@@ -599,7 +599,7 @@ footer .social {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-bottom: 10rem;
+  margin: 10rem 0;
 }
 
 .detail-blocks .full-length {
