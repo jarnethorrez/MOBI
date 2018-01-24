@@ -28,6 +28,11 @@ html {
   display: none;
 }
 
+.wrapper {
+  width: 96rem;
+  margin: 0 auto;
+}
+
 header {
   display: flex;
 }
@@ -348,4 +353,34 @@ nav a {
   display: flex;
   justify-content: space-between;
   width: 60rem;
+}
+
+footer {
+  background: var(--DarkBlue);
+  color: white;
+  font-size: 1.4rem;
+  padding: 5rem 0;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  margin: 1rem 0;
+  line-height: 1.8rem;
+}
+
+footer .info {
+  width: 20rem;
+}
+
+footer .social {
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 16rem;
 }
