@@ -17,6 +17,22 @@
 
 <main class="wrapper detail-grid">
   <div class="thumbnail" style="background-image: url(assets/thumbnails/<?php echo $event['code']; ?>.jpg)"></div>
+  <div class="important-info">
+    <p><?php echo $event['location'] . '<br />' . $event['address']?></p>
+    <p><?php
+    $date = new DateTime($event['start']);
+    echo $date->format('d/m/Y');
+    ?></p>
+    <p><?php
+      $startTime = new DateTime($event['start']);
+      $startTime = $startTime->format('H:i');
+
+      $endTime = new DateTime($event['end']);
+      $endTime = $endTime->format('H:i');
+
+      echo $startTime . ' - ' . $endTime;
+    ?></p>
+  </div>
   <?php  echo $event['content']; ?>
 
   <?php if (!empty($event['practical'])): ?>

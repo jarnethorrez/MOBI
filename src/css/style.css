@@ -504,7 +504,7 @@ footer .social {
 .detail-grid {
   display: grid;
   grid-template-columns: 1fr 40rem;
-  grid-template-rows: 5rem 35rem 1fr;
+  grid-template-rows: 5rem 30rem 5rem 1fr;
   margin-top: -5rem;
 }
 
@@ -513,7 +513,7 @@ footer .social {
   height: 40rem;
   background-size: cover;
   grid-column: 2 / span 1;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
 }
 
 .detail-grid .intro {
@@ -530,9 +530,19 @@ footer .social {
   line-height: 1.8rem;
 }
 
+.detail-grid .important-info {
+  grid-row: 3;
+  grid-column: 1 / span 1;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
 .detail-grid .detail-blocks {
   grid-column: 1 / span 2;
-  grid-row: 3;
+  grid-row: 4;
   margin-top: 5rem;
   display: grid;
   grid-template-columns: repeat(3, 30rem);
@@ -554,7 +564,7 @@ footer .social {
 
 .detail-grid .praktisch {
   grid-column: 1 / span 2;
-  grid-row: 4;
+  grid-row: 5;
   background: var(--Blue);
   color: white;
   padding: 5rem 15rem;
@@ -582,7 +592,7 @@ footer .social {
 }
 
 .detail-grid .buttons {
-  grid-row: 5;
+  grid-row: 6;
   grid-column: 1 / span 2;
   align-self: center;
   justify-self: center;
@@ -590,4 +600,8 @@ footer .social {
   justify-content: space-around;
   width: 100%;
   margin-bottom: 10rem;
+}
+
+.detail-blocks .full-length {
+  grid-column: 1 / span 3;
 }
