@@ -33,10 +33,6 @@ html {
   margin: 0 auto;
 }
 
-header {
-  display: flex;
-}
-
 .button {
   padding: 1rem 2rem;
   border-radius: 50rem;
@@ -94,12 +90,23 @@ header {
   color: white;
 }
 
+header {
+  display: flex;
+}
+
 .left-side {
   background-color: var(--Green);
   width: 50vw;
   display: grid;
-  grid-template-rows: 5rem 24rem 5rem 35rem;
   grid-template-columns: 1fr;
+}
+
+.home-header .left-side {
+  grid-template-rows: 5rem 24rem 5rem 35rem;
+}
+
+.repeatable-header .left-side {
+  grid-template-rows: 5rem 24rem 5rem 13rem;
 }
 
 .left-side img {
@@ -127,7 +134,27 @@ header {
   width: 50vw;
   display: grid;
   grid-template-columns: 48rem;
+}
+
+.home-header .right-side {
   grid-template-rows: 5rem 5rem 17rem 2rem 48rem;
+}
+
+.repeatable-header .right-side {
+  grid-template-rows: 5rem 5rem 0 2rem 35rem;
+}
+
+.repeatable-header .right-side .title {
+  font-size: 4.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 38rem;
+  text-align: right;
+  grid-row: 5 / span 1;
+  grid-column: 1;
+  z-index: 9;
+  justify-self: end;
+  align-self: center;
 }
 
 nav {
@@ -322,6 +349,7 @@ nav a {
   font-weight: 700;
   margin-top: 2rem;
   padding: 0 2rem;
+  min-height: 2.8rem;
 }
 
 .event-card p {
@@ -383,4 +411,92 @@ footer .social {
   flex-direction: column;
   justify-content: space-between;
   height: 16rem;
+}
+
+.filter {
+  margin-top: 5rem;
+}
+
+.filter .label {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.days {
+  display: flex;
+  margin-bottom: 5rem;
+}
+
+.day {
+  text-align: center;
+  width: 5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+}
+
+.day-inactive {
+  opacity: .5;
+}
+
+.input {
+  padding: 1rem;
+  border-radius: 50rem;
+  border: .1rem solid black;
+  font-family: Futura;
+  font-size: 1.4rem;
+  width: 30rem;
+  outline: none;
+}
+
+.filter .upper-section {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: repeat(2, 40rem);
+  grid-template-rows: 3rem 10rem;
+}
+
+.tags {
+  background: var(--DarkBlue);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.tags .label {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: white;
+  text-align: left;
+  margin: 2rem 0;
+}
+
+.tags .tag {
+  background: white;
+  display: inline;
+  color: var(--DarkBlue);
+  padding: .5rem 1rem;
+  border-radius: 50rem;
+  margin: 0 1rem;
+  line-height: 4.4rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.tags .tag-inactive {
+  opacity: .5;
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(3, 30rem);
+  grid-gap: 2rem;
+  padding: 5rem 0;
+}
+
+.events a {
+  margin: 0 auto;
+  display: block;
+  width: 20rem;
+  text-align: center;
+  margin-top: 2rem;
 }

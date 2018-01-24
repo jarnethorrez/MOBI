@@ -2,6 +2,7 @@
 
 require_once WWW_ROOT . 'controller' . DS . 'Controller.php';
 require_once WWW_ROOT . 'dao' . DS . 'EventDAO.php';
+require_once WWW_ROOT . 'dao' . DS . 'TagDAO.php';
 
 class EventsController extends Controller {
 
@@ -9,6 +10,7 @@ class EventsController extends Controller {
 
   function __construct() {
     $this->eventDAO = new EventDAO();
+    $this->tagDAO = new TagDAO();
   }
 
   public function index() {
@@ -67,19 +69,22 @@ class EventsController extends Controller {
     // );
 
     //example: search on organiser, with certain end date + time
-    $conditions[] = array(
-      'field' => 'organiser',
-      'comparator' => 'like',
-      'value' => 'brussel'
-    );
-    $conditions[] = array(
-      'field' => 'end',
-      'comparator' => '=',
-      'value' => '2018-09-16 18:00:00'
-    );
+    // $conditions[] = array(
+    //   'field' => 'organiser',
+    //   'comparator' => 'like',
+    //   'value' => 'brussel'
+    // );
+    // $conditions[] = array(
+    //   'field' => 'end',
+    //   'comparator' => '=',
+    //   'value' => '2018-09-16 18:00:00'
+    // );
 
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
+
+    $tags = $this->tagDAO->getTags();
+    $this->set('tags', $tags);
   }
 
 }

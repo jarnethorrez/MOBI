@@ -1,22 +1,81 @@
-<section>
-  <h1>Events</h1>
-  <?php foreach($events as $event): ?>
-    <article>
-      <header><h2><?php echo $event['title']; ?></h2></header>
-      <dl>
-        <dt>code</dt><dd><?php echo $event['code'];?></dd>
-        <dt>content</dt><dd><?php echo $event['content'];?></dd>
-        <dt>practical</dt><dd><?php echo $event['practical'];?></dd>
-        <dt>location</dt><dd><?php echo $event['location'];?></dd>
-        <dt>address</dt><dd><?php echo $event['address'];?></dd>
-        <dt>postal</dt><dd><?php echo $event['postal'];?></dd>
-        <dt>city</dt><dd><?php echo $event['city'];?></dd>
-        <dt>start</dt><dd><?php echo $event['start'];?></dd>
-        <dt>end</dt><dd><?php echo $event['end'];?></dd>
-        <dt>link</dt><dd><?php echo $event['link'];?></dd>
-        <dt>organisers</dt><dd><ul><?php foreach($event['organisers'] as $organiser): ?><li><?php echo $organiser['name'];?></li><?php endforeach;?></ul></dd>
-        <dt>tags</dt><dd><ul><?php foreach($event['tags'] as $tag): ?><li><?php echo $tag['tag'];?></li><?php endforeach;?></ul></dd>
-      </dl>
-    </article>
-  <? endforeach;?>
-</section>
+<header class="repeatable-header">
+  <h1 class="hidden">Week van de mobiliteit</h1>
+  <div class="left-side">
+      <img src="assets/img/logo.png" alt="logo" class="logo">
+  </div>
+  <div class="right-side">
+    <nav>
+      <a href="index.php">Home</a>
+      <a href="#">Over</a>
+      <a href="?page=events">acties</a>
+      <a href="?page=organiseEvent" class="button green-button">organiseer een actie</a>
+    </nav>
+    <h2 class="title">Activiteiten</h2>
+    <img src="assets/img/bike.png" alt="rollerskate">
+  </div>
+</header>
+<main>
+  <section class="filter">
+    <div class="wrapper upper-section">
+      <p class="label">Kies een of meerdere dagen</p>
+      <p class="label">Plaats</p>
+      <div class="days">
+        <p class="day" data-day="16">16<br />SEPT</p>
+        <p class="day" data-day="17">17<br />SEPT</p>
+        <p class="day" data-day="18">18<br />SEPT</p>
+        <p class="day" data-day="19">19<br />SEPT</p>
+        <p class="day" data-day="20">20<br />SEPT</p>
+        <p class="day" data-day="21">21<br />SEPT</p>
+        <p class="day" data-day="22">22<br />SEPT</p>
+      </div>
+      <form class="" action="index.html" method="post">
+        <input type="text" name="plaats" placeholder="Stad of postcode" class="input">
+      </form>
+    </div>
+
+    <div class="tags">
+      <div class="wrapper">
+        <p class="label">Tags</p>
+        <?php foreach($tags as $tag): ?>
+          <p class="tag"><?php echo $tag['tag']; ?></p>
+        <?php endforeach; ?>
+      </div>
+      </div>
+  </section>
+
+  <section class="events wrapper">
+    <?php foreach($events as $event): ?>
+      <article class="event-card">
+        <div class="event-card-image" style="background-image: url(assets/thumbnails/<?php echo $event['code']?>.jpg);"></div>
+        <h3><?php echo $event['title']; ?></h3>
+        <div class="dateTime">
+          <p class="date"><?php
+             $date = new DateTime($event['start']);
+             echo $date->format('d/m/Y');
+          ?></p>
+          <p class="time"><?php
+            $startTime = new DateTime($event['start']);
+            $startTime = $startTime->format('H:i');
+
+            $endTime = new DateTime($event['end']);
+            $endTime = $endTime->format('H:i');
+
+            echo $startTime . ' - ' . $endTime;
+          ?></p>
+        </div>
+
+        <p class="location"><?php echo $event['city']; ?></p>
+
+        <p class="info"><?php
+          $content = $event['content'];
+          if (strlen($content) > 140) {
+            $content = substr($content, 0, 140);
+          }
+          $content .= '...';
+          echo $content;
+        ?></p>
+        <a href="?page=detail?e=<?php echo $event['id']; ?>" class="button green-button wide-button">Lees Meer</a>
+      </article>
+    <?php endforeach; ?>
+  </section>
+</main>

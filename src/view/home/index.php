@@ -1,5 +1,4 @@
-<!-- <div class="wrapper-shower"></div> -->
-<header>
+<header class="home-header">
   <h1 class="hidden">Week van de mobiliteit</h1>
   <div class="left-side">
     <img src="assets/img/logo.png" alt="logo" class="logo">
@@ -7,6 +6,7 @@
   </div>
   <div class="right-side">
     <nav>
+      <a href="index.php">Home</a>
       <a href="#">Over</a>
       <a href="?page=events">acties</a>
       <a href="?page=organiseEvent" class="button green-button">organiseer een actie</a>
