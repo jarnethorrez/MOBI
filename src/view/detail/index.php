@@ -18,7 +18,17 @@
 <main class="wrapper detail-grid">
   <div class="thumbnail" style="background-image: url(assets/thumbnails/<?php echo $event['code']; ?>.jpg)"></div>
   <div class="important-info">
-    <p><?php echo $event['location'] . '<br />' . $event['address'] . '<br />' . $event['postal'] . ' ' . $event['city']?></p>
+    <p><?php
+
+    if ($event['address'] != 'Diverse locaties') {
+      $str = $event['location'] . '<br />' . $event['address'] . '<br />' . $event['postal'] . ' ' . $event['city'];
+    } else {
+      $str = $event['address'];
+    }
+
+    echo $str;
+
+    ?></p>
     <p><?php
     $date = new DateTime($event['start']);
     echo $date->format('d/m/Y');
