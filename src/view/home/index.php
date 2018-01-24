@@ -51,4 +51,48 @@ aangemoedigd om naar school te stappen of trappen</p>
     </article>
   </section>
 
+  <section class="recent">
+
+    <img src="assets/img/train.png" alt="trein">
+
+    <div class="recent-data">
+      <h2>Recent toegevoegde acties</h2>
+      <?php foreach($events as $event): ?>
+        <article class="event-card">
+          <div class="event-card-image" style="background-image: url(assets/thumbnails/<?php echo $event['code']?>.jpg);"></div>
+          <h3><?php echo $event['title']; ?></h3>
+          <div class="dateTime">
+            <p class="date"><?php
+               $date = new DateTime($event['start']);
+               echo $date->format('d/m/Y');
+            ?></p>
+            <p class="time"><?php
+              $startTime = new DateTime($event['start']);
+              $startTime = $startTime->format('H:i');
+
+              $endTime = new DateTime($event['end']);
+              $endTime = $endTime->format('H:i');
+
+              echo $startTime . ' - ' . $endTime;
+            ?></p>
+          </div>
+
+          <p class="location"><?php echo $event['city']; ?></p>
+
+          <p class="info"><?php
+            $content = $event['content'];
+            if (strlen($content) > 140) {
+              $content = substr($content, 0, 140);
+            }
+            $content .= '...';
+            echo $content;
+          ?></p>
+        </article>
+      <?php endforeach; ?>
+    </div>
+    <div class="buttons">
+      <a href="#" class="button green-button">bekijk alle activiteiten</a>
+      <a href="#" class="button blue-button">organiseer een activiteiten</a>
+    </div>
+  </section>
 </main>

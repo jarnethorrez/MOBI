@@ -80,6 +80,15 @@ class EventDAO extends DAO {
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }
 
+  public function selectThreeLatest() {
+    $sql = "SELECT * FROM `ma3_auto_events` ORDER BY `id` DESC LIMIT 3";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+  }
+
   private function _getEventIdsFromResult(&$result) {
     $eventIds = array();
     foreach($result as &$row) {

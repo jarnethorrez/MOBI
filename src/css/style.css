@@ -58,6 +58,17 @@ header {
   color: var(--Green);
 }
 
+.blue-button {
+  background: var(--Blue);
+  color: white;
+  border-color: var(--Blue);
+}
+
+.blue-button:hover {
+  background: white;
+  color: var(--Blue);
+}
+
 .white-outline-button {
   border-color: white;
   color: white;
@@ -175,7 +186,7 @@ nav a {
 
 .over h2 {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -213,7 +224,7 @@ nav a {
 
 .importantDate h3 {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-top: 5rem;
 }
 
@@ -221,6 +232,7 @@ nav a {
   font-size: 1.4rem;
   width: 70%;
   margin: 2rem auto;
+  line-height: 1.8rem;
 }
 
 .importantDate .divider {
@@ -251,4 +263,89 @@ nav a {
 
 .strap {
   background: var(--Blue);
+}
+
+.recent {
+  background: var(--BrokenWhite);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 22rem 8rem 35rem 20rem;
+}
+
+.recent img {
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.recent h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  grid-column: 1 / span 3;
+}
+
+.recent-data {
+  width: 96rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 30rem);
+  grid-template-rows: 1.8rem 1fr;
+  grid-gap: 2rem;
+  z-index: 9;
+  position: relative;
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+
+.event-card {
+  width: 30rem;
+  border-radius: .5rem;
+  background: white;
+  padding-bottom: 2rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+}
+
+.event-card-image {
+  height: 20rem;
+  background-size: cover;
+  border-radius: .5rem .5rem 0 0;
+}
+
+.event-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+.event-card p {
+  font-size: 1.4rem;
+  padding: 0 2rem;
+  margin-top: 1rem;
+}
+
+.event-card .dateTime {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.event-card .location {
+  font-weight: 500;
+}
+
+.event-card .location::before {
+  content: url(../assets/img/location-icon.png);
+  margin-right: 1rem;
+}
+
+.recent .buttons {
+  grid-column: 1;
+  grid-row: 4;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 60rem;
 }

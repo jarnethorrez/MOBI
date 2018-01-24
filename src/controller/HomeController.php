@@ -12,7 +12,8 @@ class HomeController extends Controller {
   }
 
   public function index() {
-    // $this->set('css', 'linkrefjeweethaha');
+    $events = $this->eventDAO->selectThreeLatest();
+    $this->set('events', $events);
   }
 
 }
