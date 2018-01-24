@@ -74,7 +74,7 @@
           $content .= '...';
           echo $content;
         ?></p>
-        <a href="?page=detail?e=<?php echo $event['id']; ?>" class="button green-button wide-button">Lees Meer</a>
+        <a href="?page=detail&e=<?php echo $event['id']; ?>" class="button green-button wide-button">Lees Meer</a>
       </article>
     <?php endforeach; ?>
   </section>
