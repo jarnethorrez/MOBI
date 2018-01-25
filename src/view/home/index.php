@@ -80,7 +80,7 @@ aangemoedigd om naar school te stappen of trappen</p>
           <p class="location"><?php echo $event['city']; ?></p>
 
           <p class="info"><?php
-            $content = $event['content'];
+            $content = strip_tags($event['content']);
             if (strlen($content) > 140) {
               $content = substr($content, 0, 140);
             }
