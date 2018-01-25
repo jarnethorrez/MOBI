@@ -10,7 +10,7 @@
       <a href="?page=events">acties</a>
       <a href="?page=organiseEvent" class="button green-button">organiseer een actie</a>
     </nav>
-    <h2 class="title"><?php echo $event['title']; ?></h2>
+    <h2 class="title event-title"><?php echo $event['title']; ?></h2>
     <img src="assets/img/skateboard.png" alt="rollerskate">
   </div>
 </header>
@@ -31,11 +31,11 @@
     echo $str;
 
     ?></p>
-    <p><?php
+    <p class="detail-date"><?php
     $date = new DateTime($event['start']);
     echo 'Datum<br />' . $date->format('d/m/Y');
     ?></p>
-    <p><?php
+    <p class="detail-time"><?php
       $startTime = new DateTime($event['start']);
       $startTime = $startTime->format('H:i');
 

@@ -568,7 +568,7 @@ footer .social {
   grid-row: 4;
   margin-top: 5rem;
   display: grid;
-  grid-template-columns: repeat(3, 30rem);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
 }
 
@@ -694,6 +694,11 @@ footer .social {
     visibility: hidden;
   }
 
+  .repeatable-header .right-side .title {
+    width: 100%;
+    word-break: break-all;
+  }
+
 }
 
 @media only screen and (max-width: 850px) {
@@ -736,7 +741,7 @@ footer .social {
   }
 
   .repeatable-header .right-side .title {
-    font-size: 3.5rem;
+    font-size: 2.7rem;
   }
 
   .repeatable-header .right-side img {
@@ -807,6 +812,34 @@ footer .social {
     width: 100%;
   }
 
+  .detail-grid {
+    grid-template-columns: 1fr 30rem;
+  }
+
+  .thumbnail {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .detail-grid .important-info {
+    grid-column: 1 / span 2;
+  }
+
+  .detail-grid .praktisch {
+    padding: 5rem;
+  }
+
+  .detail-grid .buttons {
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .detail-grid .buttons .button {
+    display: block;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
 }
 
 @media only screen and (max-width: 650px) {
@@ -824,6 +857,7 @@ footer .social {
     height: 5rem;
     z-index: 99999999;
     text-align: center;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
   }
 
   .mobile-nav a,
@@ -883,9 +917,11 @@ footer .social {
     grid-template-rows: 5rem 24rem 5rem 3rem;
   }
 
-  .repeatable-header .right-side .title {
-    width: 20rem;
+  .repeatable-header .right-side .event-title {
+    width: 40rem;
     font-size: 3rem;
+    word-break: normal;
+    text-align: center;
   }
 
   .over .inner {
@@ -942,6 +978,30 @@ footer .social {
     margin: 0 auto;
   }
 
+  .detail-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 30rem auto auto auto auto 15rem;
+  }
+
+  .thumbnail {
+    grid-column: 1 / span 1;
+    margin: 0 auto;
+  }
+
+  .detail-grid .intro p {
+    text-align: center;
+    width: 100%;
+    margin: 2rem 0;
+  }
+
+  .detail-grid .detail-blocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-grid .buttons {
+    width: 100%;
+  }
+
 }
 
 @media only screen and (max-width: 420px) {
@@ -983,17 +1043,20 @@ footer .social {
   }
 
   .repeatable-header .left-side {
-    grid-template-rows: 5rem 2rem 4rem 1rem 15rem;
+    grid-template-rows: 5rem 2rem 4rem 1rem 25rem;
   }
 
   .repeatable-header .right-side {
     grid-template-columns: 15rem;
-    grid-template-rows: 5rem 2rem 0 1rem 15rem;
+    grid-template-rows: 5rem 2rem 0 5rem 25rem;
   }
 
   .repeatable-header .right-side .title {
-    width: 15rem;
-    font-size: 2rem;
+    width: 30rem;
+    font-size: 2.7;
+    margin-top: 7rem;
+    word-break: normal;
+    text-align: center;
   }
 
   .repeatable-header .right-side img {
@@ -1023,6 +1086,30 @@ footer .social {
 
   .day {
     width: 4rem;
+  }
+
+  .detail-date {
+    text-align: center;
+  }
+
+  .detail-time {
+    text-align: right;
+  }
+
+  .detail-grid .detail-blocks {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid .praktisch {
+    margin: 5rem 1rem;
+  }
+
+  .repeatable-header .right-side .event-title {
+    width: 30rem;
+    font-size: 2rem;
+    margin-top: 7rem;
+    word-break: normal;
+    text-align: center;
   }
 
 }
