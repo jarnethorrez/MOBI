@@ -92,7 +92,7 @@ aangemoedigd om naar school te stappen of trappen</p>
     </div>
     <div class="buttons">
       <a href="?page=events" class="button green-button">bekijk alle activiteiten</a>
-      <a href="?page=organiseEvent" class="button blue-button">organiseer een activiteiten</a>
+      <a href="?page=organiseEvent" class="button blue-button">organiseer een activiteit</a>
     </div>
   </section>
 </main>

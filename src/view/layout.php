@@ -9,6 +9,12 @@
   <body>
 
     <div class="container">
+      <div class="mobile-nav">
+        <a href="index.php">Home</a>
+        <a href="#">Over</a>
+        <a href="?page=events">acties</a>
+        <a href="?page=organiseEvent">organiseer een actie</a>
+      </div>
       <?php if(!empty($_SESSION['info'])): ?><div class="alert alert-success"><?php echo $_SESSION['info'];?></div><?php endif; ?>
       <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>
 
