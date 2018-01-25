@@ -11,7 +11,7 @@
       <a href="?page=organiseEvent" class="button green-button">organiseer een actie</a>
     </nav>
     <h2 class="title"><?php echo $event['title']; ?></h2>
-    <img src="assets/img/bike.png" alt="rollerskate">
+    <img src="assets/img/skateboard.png" alt="rollerskate">
   </div>
 </header>
 
@@ -20,10 +20,12 @@
   <div class="important-info">
     <p><?php
 
+    $str = 'Locatie<br />';
+
     if ($event['address'] != 'Diverse locaties') {
-      $str = $event['location'] . '<br />' . $event['address'] . '<br />' . $event['postal'] . ' ' . $event['city'];
+      $str .= $event['location'] . '<br />' . $event['address'] . '<br />' . $event['postal'] . ' ' . $event['city'];
     } else {
-      $str = $event['address'];
+      $str .= $event['address'];
     }
 
     echo $str;
@@ -31,7 +33,7 @@
     ?></p>
     <p><?php
     $date = new DateTime($event['start']);
-    echo $date->format('d/m/Y');
+    echo 'Datum<br />' . $date->format('d/m/Y');
     ?></p>
     <p><?php
       $startTime = new DateTime($event['start']);
@@ -40,7 +42,7 @@
       $endTime = new DateTime($event['end']);
       $endTime = $endTime->format('H:i');
 
-      echo $startTime . ' - ' . $endTime;
+      echo 'Start - einde<br />' . $startTime . 'u - ' . $endTime . 'u';
     ?></p>
   </div>
   <?php  echo $event['content']; ?>
