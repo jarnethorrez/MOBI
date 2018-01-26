@@ -206,6 +206,7 @@ nav a:active {
   justify-self: end;
 }
 
+.repeatable-header .right-side .bike,
 .home-header .right-side .rollerskate,
 .right-side img {
   grid-row: 4 / span 2;
@@ -215,6 +216,10 @@ nav a:active {
 .home-header .right-side img {
   width: 30rem;
   height: 47rem;
+}
+
+.bike img {
+  width: 28.3rem;
 }
 
 .over {
@@ -750,6 +755,7 @@ footer .social {
     font-size: 2.7rem;
   }
 
+  .repeatable-header .right-side .bike,
   .repeatable-header .right-side img {
     width: 20rem;
     height: auto;
@@ -1041,6 +1047,7 @@ footer .social {
   }
 
   .home-header .right-side .rollerskate,
+  .repeatable-header .right-side .bike,
   header .right-side img {
     width: 10rem;
     height: auto;
@@ -1073,6 +1080,7 @@ footer .social {
     text-align: center;
   }
 
+  .repeatable-header .right-side .bike,
   .repeatable-header .right-side img {
     width: 15rem;
   }

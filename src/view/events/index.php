@@ -22,7 +22,16 @@
       <a href="?page=organiseEvent" class="button green-button">organiseer een actie</a>
     </nav>
     <h2 class="title">Activiteiten</h2>
-    <img src="assets/img/bike.png" alt="rollerskate">
+    <picture class="bike">
+      <source sizes="50vw" srcset="assets/img/bike.webp 283w,
+                                   assets/img/bike-200.webp 200w,
+                                   assets/img/bike-150.webp 150w" type="image/webp">
+
+                                   <source sizes="20vw" srcset="assets/img/bike.png 283w,
+                                                                assets/img/bike-200.png 200w,
+                                                                assets/img/bike-150.png 150w" type="image/png">
+      <img src="assets/img/bike.png" alt="bike">
+    </picture>
   </div>
 </header>
 <main>
