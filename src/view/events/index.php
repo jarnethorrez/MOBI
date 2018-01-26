@@ -1,7 +1,18 @@
 <header class="repeatable-header">
   <h1 class="hidden">Week van de mobiliteit</h1>
   <div class="left-side">
-      <img src="assets/img/logo.png" alt="logo" class="logo">
+    <picture class="logo">
+      <source sizes="20vw" srcset="assets/img/logo.webp 390w,
+                                   assets/img/logo-300.webp 300w,
+                                   assets/img/logo-200.webp 200w,
+                                   assets/img/logo-150.webp 150w" type="image/webp">
+
+                                   <source sizes="20vw" srcset="assets/img/logo.png 390w,
+                                                                assets/img/logo-300.png 300w,
+                                                                assets/img/logo-200.png 200w,
+                                                                assets/img/logo-150.png 150w" type="image/png">
+      <img src="assets/img/logo.png" alt="logo">
+    </picture>
   </div>
   <div class="right-side">
     <nav>
