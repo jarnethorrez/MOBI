@@ -207,6 +207,7 @@ nav a:active {
 }
 
 .repeatable-header .right-side .bike,
+.repeatable-header .right-side .skateboard,
 .home-header .right-side .rollerskate,
 .right-side img {
   grid-row: 4 / span 2;
@@ -220,6 +221,10 @@ nav a:active {
 
 .bike img {
   width: 28.3rem;
+}
+
+.skateboard img {
+  width: 33.1rem;
 }
 
 .over {
@@ -756,6 +761,7 @@ footer .social {
   }
 
   .repeatable-header .right-side .bike,
+  .repeatable-header .right-side .skateboard,
   .repeatable-header .right-side img {
     width: 20rem;
     height: auto;
@@ -1047,6 +1053,7 @@ footer .social {
   }
 
   .home-header .right-side .rollerskate,
+  .home-header .right-side .skateboard,
   .repeatable-header .right-side .bike,
   header .right-side img {
     width: 10rem;
@@ -1081,6 +1088,7 @@ footer .social {
   }
 
   .repeatable-header .right-side .bike,
+  .repeatable-header .right-side .skateboard,
   .repeatable-header .right-side img {
     width: 15rem;
   }
