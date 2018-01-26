@@ -113,10 +113,6 @@ header {
   grid-template-rows: 5rem 24rem 5rem 13rem;
 }
 
-.left-side .car {
-  justify-self: end;
-}
-
 .left-side .logo {
   grid-row: 2 / span 2;
   grid-column: 1;
@@ -136,6 +132,10 @@ header {
   display: block;
   margin-right: -.25rem;
   opacity: .8;
+  justify-self: end;
+}
+
+.left-side .car img {
   width: 44rem;
   height: 39rem;
 }
@@ -724,7 +724,8 @@ footer .social {
     height: auto;
   }
 
-  header .left-side .car {
+  header .left-side .car,
+  header .left-side .car img {
     width: 30rem;
     height: auto;
   }
@@ -891,7 +892,8 @@ footer .social {
     width: 20rem;
   }
 
-  header .left-side .car {
+  header .left-side .car,
+  header .left-side .car img {
     width: 20rem;
     margin-right: 0;
   }
@@ -1026,7 +1028,8 @@ footer .social {
     width: 15rem;
   }
 
-  header .left-side .car {
+  header .left-side .car,
+  header .left-side .car img {
     width: 15rem;
     margin-right: 0;
   }

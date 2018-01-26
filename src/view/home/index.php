@@ -15,7 +15,19 @@
                                                                 assets/img/logo-150.png 150w" type="image/png">
       <img src="assets/img/logo.png" alt="logo">
     </picture>
-    <img src="assets/img/car.png" alt="car" class="car" align="right">
+
+    <picture class="car">
+      <source sizes="20vw" srcset="assets/img/car.webp 440w,
+                                   assets/img/car-300.webp 300w,
+                                   assets/img/car-200.webp 200w,
+                                   assets/img/car-150.webp 150w" type="image/webp">
+
+                                   <source sizes="20vw" srcset="assets/img/car.png 440w,
+                                                                assets/img/car-300.png 300w,
+                                                                assets/img/car-200.png 200w,
+                                                                assets/img/car-150.png 150w" type="image/png">
+      <img src="assets/img/car.png" alt="car">
+    </picture>
   </div>
   <div class="right-side">
     <nav>
