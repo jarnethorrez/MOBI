@@ -22,7 +22,7 @@
                                    assets/img/car-200.webp 200w,
                                    assets/img/car-150.webp 150w" type="image/webp">
 
-                                   <source sizes="20vw" srcset="assets/img/car.png 440w,
+                                   <source sizes="50vw" srcset="assets/img/car.png 440w,
                                                                 assets/img/car-300.png 300w,
                                                                 assets/img/car-200.png 200w,
                                                                 assets/img/car-150.png 150w" type="image/png">
@@ -37,7 +37,18 @@
       <a href="?page=organiseEvent" class="button green-button">organiseer een actie</a>
     </nav>
     <p class="tagline">Help ons<br />om mee(r) te autominderen</p>
-    <img src="assets/img/rollerskate.png" alt="rollerskate">
+    <picture class="rollerskate">
+      <source sizes="20vw" srcset="assets/img/rollerskate.webp 300w,
+                                   assets/img/rollerskate-200.webp 200w,
+                                   assets/img/rollerskate-140.webp 140w,
+                                   assets/img/rollerskate-100.webp 100w" type="image/webp">
+
+                                   <source sizes="50vw" srcset="assets/img/rollerskate.png 300w,
+                                                                assets/img/rollerskate-200.png 200w,
+                                                                assets/img/rollerskate-140.png 140w,
+                                                                assets/img/rollerskate-100.png 100w" type="image/png">
+      <img src="assets/img/rollerskate.png" alt="rollerskate">
+    </picture>
   </div>
 </header>
 <main>
