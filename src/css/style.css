@@ -376,8 +376,9 @@ nav a:active {
 
 .event-card-image {
   height: 20rem;
-  background-size: cover;
   border-radius: .5rem .5rem 0 0;
+  object-fit: cover;
+  width: 100%;
 }
 
 .event-card h3 {

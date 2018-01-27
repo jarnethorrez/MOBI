@@ -64,9 +64,10 @@
   </section>
 
   <section class="events wrapper">
+
     <?php foreach($events as $event): ?>
       <article class="event-card">
-        <div class="event-card-image" style="background-image: url(assets/thumbnails/<?php echo $event['code']?>.jpg);"></div>
+        <img src="assets/thumbnails/<?php echo $event['code']?>.jpg" class="event-card-image">
         <h3><?php echo $event['title']; ?></h3>
         <div class="dateTime">
           <p class="date"><?php
