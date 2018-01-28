@@ -28,16 +28,9 @@ class EventDAO extends DAO {
             $sql .= 'AND ';
           }
 
-          $i = 0;
-
           $sql .= '(';
-          foreach($days as $day) {
-            $sql .= "`start` > '2018-09-" . $day . " 00:00:00' AND `end` < '2018-09-" . $day . " 23:59:59'";
-            if ($i < count($days) - 1) {
-              $sql .= 'or ';
-            }
-            $i++;
-          }
+          $sql .= "(`start` > '2018-09-" . $day[0] . " 00:00:00' AND `end` < '2018-09-" . $days[count($days)-1] . " 23:59:59')";
+          $sql .= "OR (`end` > '2018-09-" . $days[count($days)-1] . " 00:00:00' AND `start` < '2018-09-" . $day[0] . " 00:00:00')";
           $sql .= ')';
 
         }
