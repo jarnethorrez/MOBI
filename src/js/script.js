@@ -152,7 +152,7 @@ const loadEvents = events => {
       $info.innerText = formatInfo(event.content);
 
       const $button = document.createElement(`a`);
-      $button.href = `?page=detail&e=${event.id}`;
+      $button.href = `?page=detail&e=${event.event_id}`;
       $button.classList.add(`button`);
       $button.classList.add(`green-button`);
       $button.classList.add(`wide-button`);
@@ -169,6 +169,8 @@ const loadEvents = events => {
       $article.appendChild($button);
 
       $events.appendChild($article);
+
+      console.log(event);
     });
   }
 
