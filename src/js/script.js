@@ -108,8 +108,19 @@ const formatInfo = content => {
 const loadEvents = events => {
 
   const $events = document.querySelector(`.events`);
+
   if ($events != null) {
+
+    console.log(events.length);
     $events.innerHTML = ``;
+    if (events.length === 0) {
+
+      const $p = document.createElement(`p`);
+      $p.innerText = `Geen events gevonden.`;
+      $p.classList.add(`no-events-found`);
+
+      $events.appendChild($p);
+    }
 
     events.forEach(event => {
       const $article = document.createElement(`article`);
@@ -141,6 +152,13 @@ const loadEvents = events => {
       $info.classList.add(`info`);
       $info.innerText = formatInfo(event.content);
 
+      const $button = document.createElement(`a`);
+      $button.href = `?page=detail&e=${event.id}`;
+      $button.classList.add(`button`);
+      $button.classList.add(`green-button`);
+      $button.classList.add(`wide-button`);
+      $button.innerText = `Lees Meer`;
+
       $dateTime.appendChild($date);
       $dateTime.appendChild($time);
 
@@ -149,6 +167,7 @@ const loadEvents = events => {
       $article.appendChild($dateTime);
       $article.appendChild($location);
       $article.appendChild($info);
+      $article.appendChild($button);
 
       $events.appendChild($article);
     });

@@ -645,6 +645,14 @@ footer .social {
   grid-column: 1 / span 3;
 }
 
+.no-events-found {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+  grid-column: 1 / span 3;
+}
+
 @media only screen and (max-width: 960px) {
 
   .wrapper {
