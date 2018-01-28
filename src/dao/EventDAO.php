@@ -2,6 +2,70 @@
 require_once __DIR__ . '/DAO.php';
 class EventDAO extends DAO {
 
+  public function filter($tags, $days, $location) {
+    $sql = "SELECT *
+      FROM `ma3_auto_events`
+      LEFT OUTER JOIN `ma3_auto_events_organisers` ON ma3_auto_events.id = ma3_auto_events_organisers.event_id
+      LEFT OUTER JOIN `ma3_auto_organisers` ON ma3_auto_organisers.id = ma3_auto_events_organisers.organiser_id
+      LEFT OUTER JOIN `ma3_auto_events_tags` ON ma3_auto_events.id = ma3_auto_events_tags.event_id
+      LEFT OUTER JOIN `ma3_auto_tags` ON ma3_auto_tags.id = ma3_auto_events_tags.tag_id";
+
+      if (!empty($tags) || !empty($days) || !empty($location)) {
+
+        $sql .= ' WHERE ';
+
+        if(!empty($tags)) {
+          $i = 0;
+
+          $sql .= '(';
+          foreach($tags as $tag) {
+            $sql .= "`tag` = '" . $tag . "' ";
+            if ($i < count($tags) - 1) {
+              $sql .= 'or ';
+            }
+            $i++;
+          }
+          $sql .= ')';
+        }
+
+        if (!empty($days)) {
+          if(!empty($tags)) {
+            $sql .= 'AND ';
+          }
+
+          $i = 0;
+
+          $sql .= '(';
+          foreach($days as $day) {
+            $sql .= "`start` > '2018-09-" . $day . " 00:00:00' AND `end` < '2018-09-" . $day . " 23:59:59'";
+            if ($i < count($days) - 1) {
+              $sql .= 'or ';
+            }
+            $i++;
+          }
+          $sql .= ')';
+
+        }
+
+        if (!empty($location)) {
+
+          if(!empty($days) || !empty($tags)) {
+            $sql .= 'AND ';
+          }
+
+          $sql .= "(`city` LIKE '" .$location ."%' or `postal` LIKE '" . $location . "%')";
+
+        }
+
+      }
+
+      $sql .=  "GROUP BY ma3_auto_events.id";
+
+      $stmt = $this->pdo->prepare($sql);
+      $stmt->execute();
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+
   public function search($conditions = array()) {
     $sql = "SELECT DISTINCT
       ma3_auto_events.*

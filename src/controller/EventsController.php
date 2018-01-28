@@ -16,13 +16,6 @@ class EventsController extends Controller {
   public function index() {
     $conditions = Array();
 
-
-    if (!empty($_POST['action']) && $_POST['action'] == 'search') {
-
-      var_dump($_POST);
-
-    }
-
     $events = $this->eventDAO->search($conditions);
 
     $tags = $this->tagDAO->getTags();

@@ -8,15 +8,19 @@ let selectedTags = [];
 
 const init = () => {
 
-  days.forEach(day => day.addEventListener(`click`, dayClick));
-  updateSelectedDays();
+  if (days.length > 0) {
+    days.forEach(day => day.addEventListener(`click`, dayClick));
+    updateSelectedDays();
+  }
 
-  tags.forEach(tag => tag.addEventListener(`click`, tagClick));
-  updateSelectedTags();
+  if (tags.length > 0) {
+    tags.forEach(tag => tag.addEventListener(`click`, tagClick));
+    updateSelectedTags();
+  }
 
-  input.addEventListener(`input`, inputInput);
-
-  getFromPhp();
+  if (input != null) {
+    input.addEventListener(`input`, inputInput);
+  }
 };
 
 const inputInput = () => {
@@ -65,23 +69,14 @@ const sendToPhp = () => {
   $form.append(`action`, `search`);
   $form.append(`days`, selectedDaysDates.toString());
   $form.append(`tags`, selectedTagNames.toString());
+  $form.append(`location`, input.value);
 
-  fetch(`index.php`, {
+  fetch(`view/events/getJson.php`, {
     headers: new Headers({
       Accept: `application/json`,
     }),
     method: `post`,
     body: $form,
-  });
-
-  getFromPhp();
-};
-
-const getFromPhp = () => {
-  fetch(`view/events/getJson.php`, {
-    headers: new Headers({
-      Accept: `application/json`,
-    }),
   })
     .then(r => r.json())
     .then(data => loadEvents(data));
@@ -113,49 +108,51 @@ const formatInfo = content => {
 const loadEvents = events => {
 
   const $events = document.querySelector(`.events`);
-  $events.innerHTML = ``;
+  if ($events != null) {
+    $events.innerHTML = ``;
 
-  events.forEach(event => {
-    const $article = document.createElement(`article`);
-    $article.classList.add(`event-card`);
+    events.forEach(event => {
+      const $article = document.createElement(`article`);
+      $article.classList.add(`event-card`);
 
-    const $thumb = document.createElement(`img`);
-    $thumb.src = `assets/thumbnails/${event.code}.jpg`;
-    $thumb.classList.add(`event-card-image`);
+      const $thumb = document.createElement(`img`);
+      $thumb.src = `assets/thumbnails/${event.code}.jpg`;
+      $thumb.classList.add(`event-card-image`);
 
-    const $title = document.createElement(`h3`);
-    $title.innerText = event.title;
+      const $title = document.createElement(`h3`);
+      $title.innerText = event.title;
 
-    const $dateTime = document.createElement(`div`);
-    $dateTime.classList.add(`dateTime`);
+      const $dateTime = document.createElement(`div`);
+      $dateTime.classList.add(`dateTime`);
 
-    const $date = document.createElement(`p`);
-    $date.classList.add(`date`);
-    $date.innerText = formatDate(event.start);
+      const $date = document.createElement(`p`);
+      $date.classList.add(`date`);
+      $date.innerText = formatDate(event.start);
 
-    const $time = document.createElement(`p`);
-    $time.classList.add(`time`);
-    $time.innerText = formatTime(event.start, event.end);
+      const $time = document.createElement(`p`);
+      $time.classList.add(`time`);
+      $time.innerText = formatTime(event.start, event.end);
 
-    const $location = document.createElement(`p`);
-    $location.classList.add(`location`);
-    $location.innerText = event.location;
+      const $location = document.createElement(`p`);
+      $location.classList.add(`location`);
+      $location.innerText = event.location;
 
-    const $info = document.createElement(`p`);
-    $info.classList.add(`info`);
-    $info.innerText = formatInfo(event.content);
+      const $info = document.createElement(`p`);
+      $info.classList.add(`info`);
+      $info.innerText = formatInfo(event.content);
 
-    $dateTime.appendChild($date);
-    $dateTime.appendChild($time);
+      $dateTime.appendChild($date);
+      $dateTime.appendChild($time);
 
-    $article.appendChild($thumb);
-    $article.appendChild($title);
-    $article.appendChild($dateTime);
-    $article.appendChild($location);
-    $article.appendChild($info);
+      $article.appendChild($thumb);
+      $article.appendChild($title);
+      $article.appendChild($dateTime);
+      $article.appendChild($location);
+      $article.appendChild($info);
 
-    $events.appendChild($article);
-  });
+      $events.appendChild($article);
+    });
+  }
 
 };
 
