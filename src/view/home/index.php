@@ -88,13 +88,13 @@ aangemoedigd om naar school te stappen of trappen</p>
 
   <section class="recent">
 
-    <img src="assets/img/train.png" alt="trein">
+    <img src="assets/img/train.png" alt="trein" class="train">
 
     <div class="recent-data">
       <h2>Recent toegevoegde acties</h2>
       <?php foreach($events as $event): ?>
         <article class="event-card">
-          <div class="event-card-image" style="background-image: url(assets/thumbnails/<?php echo $event['code']?>.jpg);"></div>
+          <img src="assets/thumbnails/<?php echo $event['code']?>.jpg" class="event-card-image">
           <h3><?php echo $event['title']; ?></h3>
           <div class="dateTime">
             <p class="date"><?php

@@ -340,7 +340,7 @@ nav a:active {
   grid-template-rows: 22rem 8rem 35rem 20rem;
 }
 
-.recent img {
+.recent .train {
   right: 0;
   position: absolute;
   z-index: 1;
@@ -713,7 +713,7 @@ footer .social {
     grid-gap: 2rem;
   }
 
-  .recent img {
+  .recent .train {
     display: none;
     visibility: hidden;
   }
