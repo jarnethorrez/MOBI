@@ -1,7 +1,6 @@
 <header class="home-header">
   <h1 class="hidden">Week van de mobiliteit</h1>
   <div class="left-side">
-    <!-- <img src="assets/img/logo.png" alt="logo" class="logo"> -->
 
     <picture class="logo">
       <source sizes="20vw" srcset="assets/img/logo.webp 390w,

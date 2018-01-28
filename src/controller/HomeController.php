@@ -14,6 +14,8 @@ class HomeController extends Controller {
   public function index() {
     $events = $this->eventDAO->selectThreeLatest();
     $this->set('events', $events);
+
+    $this->set('pagetitle', 'Week van de mobiliteit - Home');
   }
 
 }
