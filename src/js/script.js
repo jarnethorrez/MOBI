@@ -111,7 +111,6 @@ const loadEvents = events => {
 
   if ($events != null) {
 
-    console.log(events.length);
     $events.innerHTML = ``;
     if (events.length === 0) {
 
