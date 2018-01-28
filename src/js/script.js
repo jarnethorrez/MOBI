@@ -82,9 +82,16 @@ const sendToPhp = () => {
     .then(data => loadEvents(data));
 };
 
-const formatDate = dateTime => {
-  const date = new Date(dateTime);
-  return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+const formatDate = (start, end) => {
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+
+  let result = `${startDate.getDate()}/${startDate.getMonth()}`;
+
+  if (startDate.getDate() < endDate.getDate()) {
+    result += ` - ${endDate.getDate()}/${endDate.getMonth()}`;
+  }
+  return result;
 };
 
 const formatTime = (start, end) => {
@@ -137,7 +144,7 @@ const loadEvents = events => {
 
       const $date = document.createElement(`p`);
       $date.classList.add(`date`);
-      $date.innerText = formatDate(event.start);
+      $date.innerText = formatDate(event.start, event.end);
 
       const $time = document.createElement(`p`);
       $time.classList.add(`time`);
@@ -169,8 +176,6 @@ const loadEvents = events => {
       $article.appendChild($button);
 
       $events.appendChild($article);
-
-      console.log(event);
     });
   }
 
