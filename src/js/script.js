@@ -133,7 +133,7 @@ const loadEvents = events => {
       $article.classList.add(`event-card`);
 
       const $thumb = document.createElement(`img`);
-      $thumb.src = `assets/thumbnails/${event.code}.jpg`;
+      $thumb.src = `assets/thumbnails/${event.code}-300.jpg`;
       $thumb.classList.add(`event-card-image`);
 
       const $title = document.createElement(`h3`);

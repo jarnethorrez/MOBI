@@ -36,7 +36,7 @@
 </header>
 
 <main class="wrapper detail-grid">
-  <div class="thumbnail" style="background-image: url(assets/thumbnails/<?php echo $event['code']; ?>.jpg)"></div>
+  <div class="thumbnail" style="background-image: url(assets/thumbnails/<?php echo $event['code']; ?>-400.jpg)"></div>
   <div class="important-info">
     <p><?php
 
