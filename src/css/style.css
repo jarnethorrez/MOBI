@@ -574,6 +574,9 @@ footer .social {
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .detail-grid .detail-blocks {
