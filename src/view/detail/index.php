@@ -24,12 +24,10 @@
     <h2 class="title event-title"><?php echo $event['title']; ?></h2>
     <picture class="skateboard">
       <source sizes="20vw" srcset="assets/img/skateboard.webp 390w,
-                                   assets/img/skateboard-300.webp 300w,
                                    assets/img/logo-200.webp 200w,
                                    assets/img/logo-150.webp 150w" type="image/webp">
 
                                    <source sizes="20vw" srcset="assets/img/skateboard.png 390w,
-                                                                assets/img/skateboard-300.png 300w,
                                                                 assets/img/skateboard-200.png 200w,
                                                                 assets/img/skateboard-150.png 150w" type="image/png">
       <img src="assets/img/skateboard.png" alt="skateboard">
@@ -54,8 +52,16 @@
 
     ?></p>
     <p class="detail-date"><?php
-    $date = new DateTime($event['start']);
-    echo 'Datum<br />' . $date->format('d/m/Y');
+    $startDate = new DateTime($event['start']);
+    $endDate = new DateTime($event['end']);
+
+    $result = 'Datum<br />' . $startDate->format('d/m/Y');
+
+    if ($endDate->format('d') > $startDate->format('d')) {
+      $result .= '<br /> t.e.m.' . $endDate->format('d/m/Y');
+    }
+
+    echo $result;
     ?></p>
     <p class="detail-time"><?php
       $startTime = new DateTime($event['start']);
