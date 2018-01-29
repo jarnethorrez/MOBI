@@ -35,7 +35,9 @@
   </div>
 </header>
 <main>
+  <h2 class="hidden">events</h2>
   <section class="filter">
+    <h3 class="hidden">filter</h3>
     <div class="wrapper upper-section">
       <p class="label">Kies een of meerdere dagen</p>
       <p class="label">Plaats</p>
@@ -69,7 +71,7 @@
       <article class="event-card">
         <picture>
           <source srcset="assets/thumbnails/<?php echo $event['code']?>-300.webp" type="image/webp">
-          <img src="assets/thumbnails/<?php echo $event['code']?>-300.jpg" class="event-card-image">
+          <img src="assets/thumbnails/<?php echo $event['code']?>-300.jpg" class="event-card-image" alt="<?php echo $event['code']?>">
         </picture>
         <h3><?php echo $event['title']; ?></h3>
         <div class="dateTime">

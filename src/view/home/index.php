@@ -96,7 +96,7 @@ aangemoedigd om naar school te stappen of trappen</p>
         <article class="event-card">
           <picture>
             <source srcset="assets/thumbnails/<?php echo $event['code']?>-300.webp" type="image/webp">
-            <img src="assets/thumbnails/<?php echo $event['code']?>-300.jpg" class="event-card-image">
+            <img src="assets/thumbnails/<?php echo $event['code']?>-300.jpg" class="event-card-image" alt="<?php echo $event['code']?>">
           </picture>
           <h3><?php echo $event['title']; ?></h3>
           <div class="dateTime">

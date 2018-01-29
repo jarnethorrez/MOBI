@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
@@ -30,9 +30,9 @@
           <p>info@duurzame-mobiliteit.be</p>
         </div>
         <div class="social">
-          <a href="https://www.facebook.com/Weekvandemobiliteit"><img src="assets/img/facebook.png" /></a>
-          <a href="https://www.facebook.com/Weekvandemobiliteit"><img src="assets/img/instagram.png" /></a>
-          <a href="https://www.facebook.com/Weekvandemobiliteit"><img src="assets/img/twitter.png" /></a>
+          <a href="https://www.facebook.com/Weekvandemobiliteit"><img src="assets/img/facebook.png" alt="facebook"/></a>
+          <a href="https://www.facebook.com/Weekvandemobiliteit"><img src="assets/img/instagram.png" alt="intagram"/></a>
+          <a href="https://www.facebook.com/Weekvandemobiliteit"><img src="assets/img/twitter.png" alt="twitter"/></a>
         </div>
       </div>
     </footer>

@@ -139,6 +139,7 @@ const loadEvents = events => {
 
       const $thumb = document.createElement(`img`);
       $thumb.src = `assets/thumbnails/${event.code}-300.jpg`;
+      $thumb.alt = `${event.code}`;
       $thumb.classList.add(`event-card-image`);
 
       const $title = document.createElement(`h3`);
