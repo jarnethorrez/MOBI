@@ -24,8 +24,8 @@
     <h2 class="title event-title"><?php echo $event['title']; ?></h2>
     <picture class="skateboard">
       <source sizes="20vw" srcset="assets/img/skateboard.webp 390w,
-                                   assets/img/logo-200.webp 200w,
-                                   assets/img/logo-150.webp 150w" type="image/webp">
+                                   assets/img/skateboard-200.webp 200w,
+                                   assets/img/skateboard-150.webp 150w" type="image/webp">
 
                                    <source sizes="20vw" srcset="assets/img/skateboard.png 390w,
                                                                 assets/img/skateboard-200.png 200w,
