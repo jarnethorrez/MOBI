@@ -1030,6 +1030,14 @@ footer .social {
     width: 100%;
   }
 
+  .detail-grid .important-info {
+    flex-direction: column;
+  }
+
+  .detail-grid .important-info p {
+    margin: 1rem 0;
+  }
+
 }
 
 @media only screen and (max-width: 420px) {

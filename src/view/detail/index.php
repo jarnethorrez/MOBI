@@ -58,7 +58,7 @@
     $result = 'Datum<br />' . $startDate->format('d/m/Y');
 
     if ($endDate->format('d') > $startDate->format('d')) {
-      $result .= '<br /> t.e.m.' . $endDate->format('d/m/Y');
+      $result .= '<br /> t.e.m. ' . $endDate->format('d/m/Y');
     }
 
     echo $result;
