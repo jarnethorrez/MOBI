@@ -49,7 +49,7 @@ class EventDAO extends DAO {
             $sql .= 'AND ';
           }
 
-          $sql .= "(`city` LIKE '" .$location ."%' or `postal` LIKE '" . $location . "%')";
+          $sql .= "(`city` LIKE '" .$location ."%' or `postal` LIKE '" . $location . "%' or `city` = 'Diverse Steden')";
 
         }
 
