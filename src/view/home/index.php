@@ -94,7 +94,10 @@ aangemoedigd om naar school te stappen of trappen</p>
       <h2>Recent toegevoegde acties</h2>
       <?php foreach($events as $event): ?>
         <article class="event-card">
-          <img src="assets/thumbnails/<?php echo $event['code']?>-300.jpg" class="event-card-image">
+          <picture>
+            <source srcset="assets/thumbnails/<?php echo $event['code']?>-300.webp" type="image/webp">
+            <img src="assets/thumbnails/<?php echo $event['code']?>-300.jpg" class="event-card-image">
+          </picture>
           <h3><?php echo $event['title']; ?></h3>
           <div class="dateTime">
             <p class="date"><?php

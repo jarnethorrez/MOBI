@@ -132,6 +132,11 @@ const loadEvents = events => {
       const $article = document.createElement(`article`);
       $article.classList.add(`event-card`);
 
+      const $picture = document.createElement(`picture`);
+      const $source = document.createElement(`source`);
+      $source.srcset = `assets/thumbnails/${event.code}-300.webp`;
+      $source.type = `image/webp`;
+
       const $thumb = document.createElement(`img`);
       $thumb.src = `assets/thumbnails/${event.code}-300.jpg`;
       $thumb.classList.add(`event-card-image`);
@@ -168,7 +173,10 @@ const loadEvents = events => {
       $dateTime.appendChild($date);
       $dateTime.appendChild($time);
 
-      $article.appendChild($thumb);
+      $picture.appendChild($source);
+      $picture.appendChild($thumb);
+
+      $article.appendChild($picture);
       $article.appendChild($title);
       $article.appendChild($dateTime);
       $article.appendChild($location);

@@ -36,7 +36,10 @@
 </header>
 
 <main class="wrapper detail-grid">
-  <img class="thumbnail" src="assets/thumbnails/<?php echo $event['code']; ?>-400.jpg">
+  <picture class="thumbnail">
+    <source srcset="assets/thumbnails/<?php echo $event['code']; ?>-400.webp" type="image/webp">
+    <img class="thumbnail" src="assets/thumbnails/<?php echo $event['code']; ?>-400.jpg">
+  </picture>
   <div class="important-info">
     <p><?php
 
